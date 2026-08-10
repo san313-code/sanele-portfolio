@@ -10,9 +10,14 @@ document.querySelector('#app').innerHTML = `
     <a href="#education">Education</a>
     <a href="#contact" class="nav-cta">Contact</a>
   </nav>
-  <button class="nav-toggle" aria-label="Toggle menu">
+  <div class="nav-actions">
+    <button class="theme-toggle" type="button" aria-label="Toggle theme">
+      <span class="theme-toggle-icon">🌙</span>
+    </button>
+    <button class="nav-toggle" aria-label="Toggle menu">
     <span></span><span></span><span></span>
   </button>
+  </div>
 </header>
 
 <main>
@@ -176,6 +181,28 @@ aboutPhoto?.addEventListener('error', () => {
     aboutPhoto.dataset.fallbackLoaded = 'true'
     aboutPhoto.src = 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80'
   }
+})
+
+// Theme toggle
+const themeToggle = document.querySelector('.theme-toggle')
+const themeIcon = document.querySelector('.theme-toggle-icon')
+const storedTheme = localStorage.getItem('theme')
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+const initialTheme = storedTheme || (prefersDark ? 'dark' : 'light')
+
+const applyTheme = (theme) => {
+  document.documentElement.setAttribute('data-theme', theme)
+  localStorage.setItem('theme', theme)
+  if (themeIcon) {
+    themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙'
+  }
+}
+
+applyTheme(initialTheme)
+
+themeToggle?.addEventListener('click', () => {
+  const nextTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'
+  applyTheme(nextTheme)
 })
 
 // Mobile nav toggle
