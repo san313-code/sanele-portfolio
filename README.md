@@ -38,13 +38,14 @@ Scalable Architecture:    Designed with modularity and future growth in mind.
 3.Development Tools: VS Code, GitHub, StackBlitz
 
 4.Concepts: Object‑Oriented Programming, System Analysis & Design, Algorithms & Data Structures
+
 ## 📬 Contact
 
 Developer: Sanele Buthelezi
 
 Location: Durban, South Africa
 
-Portfolio Link: https://sanele-portfolio-nine.vercel.app/
+# Portfolio Link: https://sanele-portfolio-nine.vercel.app/
 
 
 ## 🎓 Learning Journey
