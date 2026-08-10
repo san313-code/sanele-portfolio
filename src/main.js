@@ -1,0 +1,198 @@
+import './style.css'
+
+document.querySelector('#app').innerHTML = `
+<header class="nav">
+  <a href="#hero" class="nav-brand">Sanele Buthelezi</a>
+  <nav class="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#contact" class="nav-cta">Contact</a>
+  </nav>
+  <button class="nav-toggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main>
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Aspiring Software Developer</p>
+      <h1 class="hero-title">Building the future,<br><span class="accent">one line at a time.</span></h1>
+      <p class="hero-sub">An entry-level developer who contributes to real projects while focusing on learning, practicing, and building confidence under mentorship..</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-top">
+        <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+      </div>
+      <pre class="hero-code"><code><span class="c-key">const</span> <span class="c-fn">developer</span> = {
+  <span class="c-prop">name</span>: <span class="c-str">'Sanele Buthelezi'</span>,
+  <span class="c-prop">focus</span>: <span class="c-str">'Full-Stack Web'</span>,
+  <span class="c-prop">learning</span>: [<span class="c-str">'React'</span>, <span class="c-str">'Node'</span>, <span class="c-str">'Python'</span>, <span class="c-str">'Javascript'</span>, <span class="c-str">'C#'</span>],
+  <span class="c-prop">available</span>: <span class="c-key">true</span>,
+};</code></pre>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <h2>About Me</h2>
+    </div>
+    <div class="about-grid">
+      <p class="about-text">I am an IT inspired individual, passionate and eager to learn more about development of software and advancement of technology. I am currently doing Bachelors degree in Information and Communication Technology (2nd year) at DUT. I believe in hardworking, persistent and ethical success. My focus is clean code, fast performance, and delightful user experiences</p>
+      <div class="about-stats">
+        <div class="stat"><span class="stat-num">1+</span><span class="stat-label">Years coding</span></div>
+        <div class="stat"><span class="stat-num">2</span><span class="stat-label">Projects built</span></div>
+        <div class="stat"><span class="stat-num">5</span><span class="stat-label">Open-source PRs</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2>Skills</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card"><h3>Languages</h3><ul class="tags"><li>JavaScript</li><li>Python</li><li>Java</li><li>SQL</li><li>HTML/CSS</li></ul></div>
+      <div class="skill-card"><h3>Frameworks</h3><ul class="tags"><li>React</li><li>Node.js</li><li>Express</li><li>Flask</li><li>Tailwind</li></ul></div>
+      <div class="skill-card"><h3>Tools</h3><ul class="tags"><li>Git</li><li>VS Code</li><li>Figma</li><li>PostgreSQL</li><li>Docker</li></ul></div>
+      <div class="skill-card"><h3>Currently learning</h3><ul class="tags"><li>TypeScript</li><li>AWS</li><li>GraphQL</li><li>Go</li></ul></div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <h2>Projects</h2>
+    </div>
+    <div class="projects-grid">
+      <article class="project-card">
+        <div class="project-top project-top-a">
+          <span class="project-emoji">📚</span>
+        </div>
+        <div class="project-body">
+          <h3>StudyBuddy</h3>
+          <p>A web app that helps students organize assignments and track deadlines with reminders. Built with React and a Node backend.</p>
+          <ul class="tags"><li>React</li><li>Node.js</li><li>PostgreSQL</li></ul>
+          <div class="project-links"><a href="#" class="link-arrow">Live demo →</a><a href="#" class="link-arrow">Source →</a></div>
+        </div>
+      </article>
+      <article class="project-card">
+        <div class="project-top project-top-b">
+          <span class="project-emoji">🌦️</span>
+        </div>
+        <div class="project-body">
+          <h3>SkyCast</h3>
+          <p>A clean weather dashboard using a public API, with hourly forecasts and saved locations. Responsive and accessible.</p>
+          <ul class="tags"><li>JavaScript</li><li>API</li><li>CSS</li></ul>
+          <div class="project-links"><a href="#" class="link-arrow">Live demo →</a><a href="#" class="link-arrow">Source →</a></div>
+        </div>
+      </article>
+      <article class="project-card">
+        <div class="project-top project-top-c">
+          <span class="project-emoji">🤖</span>
+        </div>
+        <div class="project-body">
+          <h3>ChatBot CLI</h3>
+          <p>A Python command-line chatbot that answers common campus questions using a simple NLP model and a local knowledge base.</p>
+          <ul class="tags"><li>Python</li><li>NLP</li><li>CLI</li></ul>
+          <div class="project-links"><a href="#" class="link-arrow">Live demo →</a><a href="#" class="link-arrow">Source →</a></div>
+        </div>
+      </article>
+      <article class="project-card">
+        <div class="project-top project-top-d">
+          <span class="project-emoji">🍽️</span>
+        </div>
+        <div class="project-body">
+          <h3>CampusEats</h3>
+          <p>A group project for browsing campus dining options, filtering by dietary needs, and saving favorites. Built with Flask.</p>
+          <ul class="tags"><li>Flask</li><li>Python</li><li>SQLite</li></ul>
+          <div class="project-links"><a href="#" class="link-arrow">Live demo →</a><a href="#" class="link-arrow">Source →</a></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="education" class="section">
+    <div class="section-head">
+      <span class="section-num">04</span>
+      <h2>Education & Experience</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2025 — Present</span>
+          <h3> Bachelor of Information and communication Technology, at DUT</h3>
+          <p>Relevant coursework: Data Structures, Algorithms, Web Development, Databases, Operating Systems. GPA 3.8.</p>
+        </div>
+      
+      
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2025-2026</span>
+          <h3>Web App Developer — Planet09ai member</h3>
+          <p>Built and maintained ExpenseBud, and mentored first-year students in C#, HTML, CSS, and JavaScript.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact-section">
+    <div class="section-head">
+      <span class="section-num">05</span>
+      <h2>Let's Connect</h2>
+    </div>
+    <p class="contact-lead">I'm actively looking for internship opportunities and happy to chat about projects, collaborations, or just tech in general.</p>
+    <div class="contact-actions">
+      <a href="mailto:sanelesbusiso800@gmail.com" class="btn btn-primary">Email Me</a>
+      <a href="#" class="btn btn-ghost">GitHub</a>
+      <a href="#" class="btn btn-ghost">LinkedIn</a>
+      <a href="#" class="btn btn-ghost">Download Resume</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>© 2025 Sanele Buthelezi. Crafted with care.</p>
+</footer>
+`
+
+// Scroll reveal
+const revealTargets = document.querySelectorAll('.hero, .section')
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible')
+        observer.unobserve(entry.target)
+      }
+    })
+  },
+  { threshold: 0.12 }
+)
+revealTargets.forEach((el) => observer.observe(el))
+
+// Mobile nav toggle
+const navToggle = document.querySelector('.nav-toggle')
+const navLinks = document.querySelector('.nav-links')
+navToggle?.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open')
+  navToggle.classList.toggle('active', open)
+})
+navLinks?.querySelectorAll('a').forEach((a) =>
+  a.addEventListener('click', () => {
+    navLinks.classList.remove('open')
+    navToggle?.classList.remove('active')
+  })
+)
+
