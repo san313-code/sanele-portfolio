@@ -160,8 +160,8 @@ document.querySelector('#app').innerHTML = `
     <p class="contact-lead">I'm actively looking for internship opportunities and happy to chat about projects, collaborations, or just tech in general.</p>
     <div class="contact-actions">
       <a href="mailto:sanelesbusiso800@gmail.com" class="btn btn-primary">Email Me</a>
-      <a href="#" class="btn btn-ghost">GitHub</a>
-      <a href="#" class="btn btn-ghost">LinkedIn</a>
+      <a href="https://github.com/san313-code/sanele-portfolio" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">GitHub</a>
+      <a href="https://www.linkedin.com/in/sanele-buthelezi-326b20367/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">LinkedIn</a>
       <a href="#" class="btn btn-ghost">Download Resume</a>
     </div>
   </section>
