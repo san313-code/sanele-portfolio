@@ -29,7 +29,6 @@ Scalable Architecture:    Designed with modularity and future growth in mind.
 
 | Project      | Description                          | Tech Stack |
 |--------------|--------------------------------------|------------|    
-| BridgeLend   | Peer-to-Peer Loan Marketplace        | React, Node |
 | ExpenseBud   | Lightweight student finance manager  | Vite.js     |
 ## 📊 Skills
 1.Programming Languages: C#, JavaScript, TypeScript, Python
@@ -66,6 +65,6 @@ I’m currently mastering:
 
 
 
-[![Ope
+
 
 [Edit in StackBlitz next generation editor ⚡️](https://stackblitz.com/~/github.com/san313-code/sanele-portfolio)
