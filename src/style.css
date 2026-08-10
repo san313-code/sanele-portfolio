@@ -177,14 +177,24 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 32px; }
 .btn-ghost:hover { border-color: var(--primary-500); color: var(--primary-600); transform: translateY(-2px); }
 
 /* ---------- About ---------- */
-.about-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 48px; align-items: start; }
+.about-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 48px; align-items: center; }
+.about-content { display: flex; flex-direction: column; gap: 24px; }
 .about-text { font-size: 18px; line-height: 1.7; color: var(--text); }
 .about-stats { display: flex; flex-direction: column; gap: 20px; }
 .stat { display: flex; flex-direction: column; gap: 2px; }
 .stat-num { font-size: 32px; font-weight: 700; color: var(--primary-600); line-height: 1; }
 .stat-label { font-size: 14px; color: var(--text); }
+.about-visual { display: flex; justify-content: center; }
+.about-photo {
+  width: 100%; max-width: 360px; aspect-ratio: 4 / 5;
+  object-fit: cover; border-radius: 24px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.about-photo:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 
-@media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; gap: 32px; } }
+@media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; gap: 32px; } .about-photo { max-width: 320px; } }
 
 /* ---------- Skills ---------- */
 .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }

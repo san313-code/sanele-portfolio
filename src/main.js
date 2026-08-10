@@ -45,11 +45,16 @@ document.querySelector('#app').innerHTML = `
       <h2>About Me</h2>
     </div>
     <div class="about-grid">
-      <p class="about-text">I am an IT inspired individual, passionate and eager to learn more about development of software and advancement of technology. I am currently doing Bachelors degree in Information and Communication Technology (2nd year) at DUT. I believe in hardworking, persistent and ethical success. My focus is clean code, fast performance, and delightful user experiences</p>
-      <div class="about-stats">
-        <div class="stat"><span class="stat-num">1+</span><span class="stat-label">Years coding</span></div>
-        <div class="stat"><span class="stat-num">2</span><span class="stat-label">Projects built</span></div>
-        <div class="stat"><span class="stat-num">5</span><span class="stat-label">Open-source PRs</span></div>
+      <div class="about-content">
+        <p class="about-text">I am an IT inspired individual, passionate and eager to learn more about development of software and advancement of technology. I am currently doing Bachelors degree in Information and Communication Technology (2nd year) at DUT. I believe in hardworking, persistent and ethical success. My focus is clean code, fast performance, and delightful user experiences</p>
+        <div class="about-stats">
+          <div class="stat"><span class="stat-num">1+</span><span class="stat-label">Years coding</span></div>
+          <div class="stat"><span class="stat-num">2</span><span class="stat-label">Projects built</span></div>
+          <div class="stat"><span class="stat-num">5</span><span class="stat-label">Open-source PRs</span></div>
+        </div>
+      </div>
+      <div class="about-visual">
+        <img class="about-photo" src="./src/assets/hero.jpg" alt="Sanele Buthelezi" loading="lazy" />
       </div>
     </div>
   </section>
@@ -181,6 +186,15 @@ const observer = new IntersectionObserver(
   { threshold: 0.12 }
 )
 revealTargets.forEach((el) => observer.observe(el))
+
+// About photo fallback
+const aboutPhoto = document.querySelector('.about-photo')
+aboutPhoto?.addEventListener('error', () => {
+  if (!aboutPhoto.dataset.fallbackLoaded) {
+    aboutPhoto.dataset.fallbackLoaded = 'true'
+    aboutPhoto.src = 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80'
+  }
+})
 
 // Mobile nav toggle
 const navToggle = document.querySelector('.nav-toggle')
