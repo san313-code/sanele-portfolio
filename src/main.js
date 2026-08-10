@@ -80,46 +80,28 @@ document.querySelector('#app').innerHTML = `
     <div class="projects-grid">
       <article class="project-card">
         <div class="project-top project-top-a">
-          <span class="project-emoji">📚</span>
+          <span class="project-emoji">🧩</span>
         </div>
         <div class="project-body">
-          <h3>StudyBuddy</h3>
-          <p>A web app that helps students organize assignments and track deadlines with reminders. Built with React and a Node backend.</p>
-          <ul class="tags"><li>React</li><li>Node.js</li><li>PostgreSQL</li></ul>
-          <div class="project-links"><a href="#" class="link-arrow">Live demo →</a><a href="#" class="link-arrow">Source →</a></div>
+          <h3>sanele-portfolio</h3>
+          <p>This portfolio site built with Vite and modern CSS, showcasing my work, experience, and contact links.</p>
+          <ul class="tags"><li>Vite</li><li>JavaScript</li><li>CSS</li></ul>
+          <div class="project-links">
+            <a href="https://github.com/san313-code/sanele-portfolio" target="_blank" rel="noopener noreferrer" class="link-arrow">View repository →</a>
+          </div>
         </div>
       </article>
       <article class="project-card">
         <div class="project-top project-top-b">
-          <span class="project-emoji">🌦️</span>
+          <span class="project-emoji">📦</span>
         </div>
         <div class="project-body">
-          <h3>SkyCast</h3>
-          <p>A clean weather dashboard using a public API, with hourly forecasts and saved locations. Responsive and accessible.</p>
-          <ul class="tags"><li>JavaScript</li><li>API</li><li>CSS</li></ul>
-          <div class="project-links"><a href="#" class="link-arrow">Live demo →</a><a href="#" class="link-arrow">Source →</a></div>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-top project-top-c">
-          <span class="project-emoji">🤖</span>
-        </div>
-        <div class="project-body">
-          <h3>ChatBot CLI</h3>
-          <p>A Python command-line chatbot that answers common campus questions using a simple NLP model and a local knowledge base.</p>
-          <ul class="tags"><li>Python</li><li>NLP</li><li>CLI</li></ul>
-          <div class="project-links"><a href="#" class="link-arrow">Live demo →</a><a href="#" class="link-arrow">Source →</a></div>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-top project-top-d">
-          <span class="project-emoji">🍽️</span>
-        </div>
-        <div class="project-body">
-          <h3>CampusEats</h3>
-          <p>A group project for browsing campus dining options, filtering by dietary needs, and saving favorites. Built with Flask.</p>
-          <ul class="tags"><li>Flask</li><li>Python</li><li>SQLite</li></ul>
-          <div class="project-links"><a href="#" class="link-arrow">Live demo →</a><a href="#" class="link-arrow">Source →</a></div>
+          <h3>View all repositories</h3>
+          <p>Browse the rest of my GitHub repositories to see more projects, experiments, and learning work.</p>
+          <ul class="tags"><li>GitHub</li><li>Repositories</li><li>Open source</li></ul>
+          <div class="project-links">
+            <a href="https://github.com/san313-code?tab=repositories" target="_blank" rel="noopener noreferrer" class="link-arrow">Open GitHub →</a>
+          </div>
         </div>
       </article>
     </div>
