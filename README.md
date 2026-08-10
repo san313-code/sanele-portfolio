@@ -44,7 +44,7 @@ Developer: Sanele Buthelezi
 
 Location: Durban, South Africa
 
-Portfolio Link: http://vite30project.vercel.app
+Portfolio Link: https://sanele-portfolio-nine.vercel.app/
 
 
 ## 🎓 Learning Journey
