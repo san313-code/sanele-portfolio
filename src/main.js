@@ -1,4 +1,5 @@
 import './style.css'
+import heroImage from './assets/hero.jpg'
 
 document.querySelector('#app').innerHTML = `
 <header class="nav">
@@ -59,7 +60,7 @@ document.querySelector('#app').innerHTML = `
         </div>
       </div>
       <div class="about-visual">
-        <img class="about-photo" src="./src/assets/hero.jpg" alt="Sanele Buthelezi" loading="lazy" />
+        <img class="about-photo" src="${heroImage}" alt="Sanele Buthelezi" loading="lazy" />
       </div>
     </div>
   </section>
@@ -178,7 +179,7 @@ const aboutPhoto = document.querySelector('.about-photo')
 aboutPhoto?.addEventListener('error', () => {
   if (!aboutPhoto.dataset.fallbackLoaded) {
     aboutPhoto.dataset.fallbackLoaded = 'true'
-    aboutPhoto.src = './src/assets/hero.jpg'
+    aboutPhoto.src = heroImage
     aboutPhoto.alt = 'Sanele Buthelezi'
     aboutPhoto.loading = 'lazy'
   }
