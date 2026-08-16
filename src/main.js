@@ -10,9 +10,14 @@ document.querySelector('#app').innerHTML = `
     <a href="#education">Education</a>
     <a href="#contact" class="nav-cta">Contact</a>
   </nav>
-  <button class="nav-toggle" aria-label="Toggle menu">
+  <div class="nav-actions">
+    <button class="theme-toggle" type="button" aria-label="Toggle theme">
+      <span class="theme-toggle-icon">🌙</span>
+    </button>
+    <button class="nav-toggle" aria-label="Toggle menu">
     <span></span><span></span><span></span>
   </button>
+  </div>
 </header>
 
 <main>
@@ -45,11 +50,16 @@ document.querySelector('#app').innerHTML = `
       <h2>About Me</h2>
     </div>
     <div class="about-grid">
-      <p class="about-text">I am an IT inspired individual, passionate and eager to learn more about development of software and advancement of technology. I am currently doing Bachelors degree in Information and Communication Technology (2nd year) at DUT. I believe in hardworking, persistent and ethical success. My focus is clean code, fast performance, and delightful user experiences</p>
-      <div class="about-stats">
-        <div class="stat"><span class="stat-num">1+</span><span class="stat-label">Years coding</span></div>
-        <div class="stat"><span class="stat-num">2</span><span class="stat-label">Projects built</span></div>
-        <div class="stat"><span class="stat-num">5</span><span class="stat-label">Open-source PRs</span></div>
+      <div class="about-content">
+        <p class="about-text">I am an IT inspired individual, passionate and eager to learn more about development of software and advancement of technology. I am currently doing Bachelors degree in Information and Communication Technology (2nd year) at DUT. I believe in hardworking, persistent and ethical success. My focus is clean code, fast performance, and delightful user experiences</p>
+        <div class="about-stats">
+          <div class="stat"><span class="stat-num">1+</span><span class="stat-label">Years coding</span></div>
+          <div class="stat"><span class="stat-num">2</span><span class="stat-label">Projects built</span></div>
+          <div class="stat"><span class="stat-num">5</span><span class="stat-label">Open-source PRs</span></div>
+        </div>
+      </div>
+      <div class="about-visual">
+        <img class="about-photo" src="./src/assets/hero.jpg" alt="Sanele Buthelezi" loading="lazy" />
       </div>
     </div>
   </section>
@@ -75,46 +85,28 @@ document.querySelector('#app').innerHTML = `
     <div class="projects-grid">
       <article class="project-card">
         <div class="project-top project-top-a">
-          <span class="project-emoji">📚</span>
+          <span class="project-emoji">🧩</span>
         </div>
         <div class="project-body">
-          <h3>StudyBuddy</h3>
-          <p>A web app that helps students organize assignments and track deadlines with reminders. Built with React and a Node backend.</p>
-          <ul class="tags"><li>React</li><li>Node.js</li><li>PostgreSQL</li></ul>
-          <div class="project-links"><a href="#" class="link-arrow">Live demo →</a><a href="#" class="link-arrow">Source →</a></div>
+          <h3>sanele-portfolio</h3>
+          <p>This portfolio site built with Vite and modern CSS, showcasing my work, experience, and contact links.</p>
+          <ul class="tags"><li>Vite</li><li>JavaScript</li><li>CSS</li></ul>
+          <div class="project-links">
+            <a href="https://github.com/san313-code/sanele-portfolio" target="_blank" rel="noopener noreferrer" class="link-arrow">View repository →</a>
+          </div>
         </div>
       </article>
       <article class="project-card">
         <div class="project-top project-top-b">
-          <span class="project-emoji">🌦️</span>
+          <span class="project-emoji">📦</span>
         </div>
         <div class="project-body">
-          <h3>SkyCast</h3>
-          <p>A clean weather dashboard using a public API, with hourly forecasts and saved locations. Responsive and accessible.</p>
-          <ul class="tags"><li>JavaScript</li><li>API</li><li>CSS</li></ul>
-          <div class="project-links"><a href="#" class="link-arrow">Live demo →</a><a href="#" class="link-arrow">Source →</a></div>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-top project-top-c">
-          <span class="project-emoji">🤖</span>
-        </div>
-        <div class="project-body">
-          <h3>ChatBot CLI</h3>
-          <p>A Python command-line chatbot that answers common campus questions using a simple NLP model and a local knowledge base.</p>
-          <ul class="tags"><li>Python</li><li>NLP</li><li>CLI</li></ul>
-          <div class="project-links"><a href="#" class="link-arrow">Live demo →</a><a href="#" class="link-arrow">Source →</a></div>
-        </div>
-      </article>
-      <article class="project-card">
-        <div class="project-top project-top-d">
-          <span class="project-emoji">🍽️</span>
-        </div>
-        <div class="project-body">
-          <h3>CampusEats</h3>
-          <p>A group project for browsing campus dining options, filtering by dietary needs, and saving favorites. Built with Flask.</p>
-          <ul class="tags"><li>Flask</li><li>Python</li><li>SQLite</li></ul>
-          <div class="project-links"><a href="#" class="link-arrow">Live demo →</a><a href="#" class="link-arrow">Source →</a></div>
+          <h3>View all repositories</h3>
+          <p>Browse the rest of my GitHub repositories to see more projects, experiments, and learning work.</p>
+          <ul class="tags"><li>GitHub</li><li>Repositories</li><li>Open source</li></ul>
+          <div class="project-links">
+            <a href="https://github.com/san313-code?tab=repositories" target="_blank" rel="noopener noreferrer" class="link-arrow">Open GitHub →</a>
+          </div>
         </div>
       </article>
     </div>
@@ -155,8 +147,8 @@ document.querySelector('#app').innerHTML = `
     <p class="contact-lead">I'm actively looking for internship opportunities and happy to chat about projects, collaborations, or just tech in general.</p>
     <div class="contact-actions">
       <a href="mailto:sanelesbusiso800@gmail.com" class="btn btn-primary">Email Me</a>
-      <a href="#" class="btn btn-ghost">GitHub</a>
-      <a href="#" class="btn btn-ghost">LinkedIn</a>
+      <a href="https://github.com/san313-code/sanele-portfolio" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">GitHub</a>
+      <a href="https://www.linkedin.com/in/sanele-buthelezi-326b20367/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">LinkedIn</a>
       <a href="#" class="btn btn-ghost">Download Resume</a>
     </div>
   </section>
@@ -181,6 +173,37 @@ const observer = new IntersectionObserver(
   { threshold: 0.12 }
 )
 revealTargets.forEach((el) => observer.observe(el))
+
+// About photo fallback
+const aboutPhoto = document.querySelector('.about-photo')
+aboutPhoto?.addEventListener('error', () => {
+  if (!aboutPhoto.dataset.fallbackLoaded) {
+    aboutPhoto.dataset.fallbackLoaded = 'true'
+    aboutPhoto.src = 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80'
+  }
+})
+
+// Theme toggle
+const themeToggle = document.querySelector('.theme-toggle')
+const themeIcon = document.querySelector('.theme-toggle-icon')
+const storedTheme = localStorage.getItem('theme')
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+const initialTheme = storedTheme || (prefersDark ? 'dark' : 'light')
+
+const applyTheme = (theme) => {
+  document.documentElement.setAttribute('data-theme', theme)
+  localStorage.setItem('theme', theme)
+  if (themeIcon) {
+    themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙'
+  }
+}
+
+applyTheme(initialTheme)
+
+themeToggle?.addEventListener('click', () => {
+  const nextTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'
+  applyTheme(nextTheme)
+})
 
 // Mobile nav toggle
 const navToggle = document.querySelector('.nav-toggle')
