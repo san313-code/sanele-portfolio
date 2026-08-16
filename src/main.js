@@ -149,7 +149,6 @@ document.querySelector('#app').innerHTML = `
       <a href="mailto:sanelesbusiso800@gmail.com" class="btn btn-primary">Email Me</a>
       <a href="https://github.com/san313-code/sanele-portfolio" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">GitHub</a>
       <a href="https://www.linkedin.com/in/sanele-buthelezi-326b20367/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">LinkedIn</a>
-      <a href="#" class="btn btn-ghost">Download Resume</a>
     </div>
   </section>
 </main>
@@ -179,7 +178,9 @@ const aboutPhoto = document.querySelector('.about-photo')
 aboutPhoto?.addEventListener('error', () => {
   if (!aboutPhoto.dataset.fallbackLoaded) {
     aboutPhoto.dataset.fallbackLoaded = 'true'
-    aboutPhoto.src = 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80'
+    aboutPhoto.src = './src/assets/hero.jpg'
+    aboutPhoto.alt = 'Sanele Buthelezi'
+    aboutPhoto.loading = 'lazy'
   }
 })
 
