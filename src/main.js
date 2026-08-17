@@ -1,5 +1,7 @@
 import './style.css'
 import heroImage from './assets/hero.jpg'
+import { db } from './firebase.js'
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
 
 document.querySelector('#app').innerHTML = `
 <header class="nav">
@@ -172,6 +174,7 @@ document.querySelector('#app').innerHTML = `
             <textarea name="message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
           </label>
 
+          <p class="form-status" aria-live="polite"></p>
           <button type="submit" class="btn btn-primary">Send Message</button>
         </form>
       </div>
@@ -209,25 +212,49 @@ const observer = new IntersectionObserver(
 revealTargets.forEach((el) => observer.observe(el))
 
 const contactForm = document.querySelector('#contactForm')
-contactForm?.addEventListener('submit', (event) => {
+const formStatus = document.querySelector('.form-status')
+contactForm?.addEventListener('submit', async (event) => {
   event.preventDefault()
 
+  const submitButton = contactForm.querySelector('button[type="submit"]')
   const formData = new FormData(contactForm)
   const name = String(formData.get('name') || '').trim()
   const email = String(formData.get('email') || '').trim()
   const subject = String(formData.get('subject') || '').trim()
   const message = String(formData.get('message') || '').trim()
 
-  const mailtoBody = [
-    `Name: ${name}`,
-    `Email: ${email}`,
-    '',
-    'Message:',
-    message
-  ].join('\n')
+  if (!name || !email || !subject || !message) {
+    formStatus.textContent = 'Please fill in all fields before sending.'
+    formStatus.className = 'form-status error'
+    return
+  }
 
-  window.location.href = `mailto:sanelesbusiso800@gmail.com?subject=${encodeURIComponent(subject || 'Portfolio enquiry')}&body=${encodeURIComponent(mailtoBody)}`
-  contactForm.reset()
+  submitButton.disabled = true
+  submitButton.textContent = 'Sending...'
+  formStatus.textContent = ''
+  formStatus.className = 'form-status'
+
+  try {
+    await addDoc(collection(db, 'contactMessages'), {
+      name,
+      email,
+      subject,
+      message,
+      createdAt: serverTimestamp(),
+      source: 'portfolio'
+    })
+
+    formStatus.textContent = 'Your message was sent successfully.'
+    formStatus.className = 'form-status success'
+    contactForm.reset()
+  } catch (error) {
+    console.error('Failed to submit contact form:', error)
+    formStatus.textContent = 'Something went wrong. Please email me directly.'
+    formStatus.className = 'form-status error'
+  } finally {
+    submitButton.disabled = false
+    submitButton.textContent = 'Send Message'
+  }
 })
 
 // About photo fallback
