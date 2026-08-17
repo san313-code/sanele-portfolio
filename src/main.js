@@ -146,10 +146,44 @@ document.querySelector('#app').innerHTML = `
       <h2>Let's Connect</h2>
     </div>
     <p class="contact-lead">I'm actively looking for internship opportunities and happy to chat about projects, collaborations, or just tech in general.</p>
-    <div class="contact-actions">
-      <a href="mailto:sanelesbusiso800@gmail.com" class="btn btn-primary">Email Me</a>
-      <a href="https://github.com/san313-code/sanele-portfolio" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">GitHub</a>
-      <a href="https://www.linkedin.com/in/sanele-buthelezi-326b20367/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">LinkedIn</a>
+
+    <div class="contact-layout">
+      <div class="contact-card">
+        <h3>Send a message</h3>
+        <form id="contactForm" class="contact-form">
+          <div class="form-row two-col">
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" placeholder="Your name" required />
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" placeholder="you@example.com" required />
+            </label>
+          </div>
+
+          <label>
+            <span>Subject</span>
+            <input type="text" name="subject" placeholder="Project enquiry" required />
+          </label>
+
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
+          </label>
+
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+
+      <div class="contact-side">
+        <h3>Quick links</h3>
+        <div class="contact-actions">
+          <a href="mailto:sanelesbusiso800@gmail.com" class="btn btn-primary">Email Me</a>
+          <a href="https://github.com/san313-code/sanele-portfolio" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">GitHub</a>
+          <a href="https://www.linkedin.com/in/sanele-buthelezi-326b20367/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">LinkedIn</a>
+        </div>
+      </div>
     </div>
   </section>
 </main>
@@ -173,6 +207,28 @@ const observer = new IntersectionObserver(
   { threshold: 0.12 }
 )
 revealTargets.forEach((el) => observer.observe(el))
+
+const contactForm = document.querySelector('#contactForm')
+contactForm?.addEventListener('submit', (event) => {
+  event.preventDefault()
+
+  const formData = new FormData(contactForm)
+  const name = String(formData.get('name') || '').trim()
+  const email = String(formData.get('email') || '').trim()
+  const subject = String(formData.get('subject') || '').trim()
+  const message = String(formData.get('message') || '').trim()
+
+  const mailtoBody = [
+    `Name: ${name}`,
+    `Email: ${email}`,
+    '',
+    'Message:',
+    message
+  ].join('\n')
+
+  window.location.href = `mailto:sanelesbusiso800@gmail.com?subject=${encodeURIComponent(subject || 'Portfolio enquiry')}&body=${encodeURIComponent(mailtoBody)}`
+  contactForm.reset()
+})
 
 // About photo fallback
 const aboutPhoto = document.querySelector('.about-photo')

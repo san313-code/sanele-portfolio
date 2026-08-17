@@ -297,7 +297,49 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 32px; }
 /* ---------- Contact ---------- */
 .contact-section { text-align: center; padding-bottom: 104px; }
 .contact-lead { font-size: 18px; max-width: 540px; margin: 0 auto 32px; }
-.contact-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.contact-layout {
+  max-width: 980px; margin: 0 auto; display: grid;
+  grid-template-columns: 1.4fr 0.8fr; gap: 24px; align-items: start;
+}
+.contact-card, .contact-side {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);
+  padding: 28px; text-align: left;
+}
+.contact-card h3, .contact-side h3 {
+  margin: 0 0 20px; font-size: 22px; color: var(--text-h);
+}
+.contact-form { display: flex; flex-direction: column; gap: 18px; }
+.form-row { display: grid; gap: 18px; }
+.two-col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.contact-form label {
+  display: flex; flex-direction: column; gap: 8px;
+  font-size: 14px; font-weight: 600; color: var(--text-h);
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%; border: 1px solid var(--border); border-radius: 12px;
+  background: rgba(15, 23, 42, 0.02); color: var(--text-h);
+  padding: 12px 14px; font: inherit; resize: vertical;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder { color: rgba(100, 116, 139, 0.8); }
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none; border-color: var(--primary-500);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+.contact-side .contact-actions {
+  display: flex; flex-direction: column; align-items: stretch;
+  gap: 12px;
+}
+.contact-side .btn { width: 100%; }
+
+@media (max-width: 768px) {
+  .contact-layout { grid-template-columns: 1fr; }
+  .two-col { grid-template-columns: 1fr; }
+}
 
 /* ---------- Footer ---------- */
 .footer { border-top: 1px solid var(--border); padding: 32px; text-align: center; }
